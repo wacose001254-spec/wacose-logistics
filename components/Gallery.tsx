@@ -9,6 +9,16 @@ const photos = [
   { src: "/images/gallery-2.jpg", title: "Regional Fleet" },
   { src: "/images/gallery-3.jpg", title: "Precision Logistics" },
   { src: "/images/gallery-4.jpg", title: "8K Branding Studio" },
+  { src: "/images/gallery-5.jpg", title: "8K Branding Studio" },
+  { src: "/images/gallery-6.jpg", title: "8K Branding Studio" },
+  { src: "/images/gallery-7.jpg", title: "8K Branding Studio" },
+  { src: "/images/gallery-8.jpg", title: "8K Branding Studio" },
+  { src: "/images/gallery-9.jpg", title: "8K Branding Studio" },
+  { src: "/images/gallery-10.jpg", title: "8K Branding Studio" },
+  { src: "/images/gallery-11.jpg", title: "8K Branding Studio" },
+  { src: "/images/gallery-12.jpg", title: "8K Branding Studio" },
+  { src: "/images/gallery-13.jpg", title: "8K Branding Studio" },
+  { src: "/images/gallery-14.jpg", title: "8K Branding Studio" },
 ];
 
 export default function GallerySlider() {
