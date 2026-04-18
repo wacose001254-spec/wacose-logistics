@@ -1,4 +1,5 @@
 "use client";
+import Link from 'next/link'; // This is the crucial missing line
 import { 
   Globe, 
   Share2, 
@@ -21,7 +22,6 @@ export default function Footer() {
               through speed, trust, and world-class technology.
             </p>
             <div className="flex gap-4">
-              {/* Using Universal Icons to bypass the brand-name error */}
               <a href="#" className="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:text-yellow-500 hover:bg-zinc-800 transition-all"><Globe size={20} /></a>
               <a href="#" className="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:text-yellow-500 hover:bg-zinc-800 transition-all"><Share2 size={20} /></a>
               <a href="#" className="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:text-yellow-500 hover:bg-zinc-800 transition-all"><MessageSquare size={20} /></a>
@@ -31,9 +31,10 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold mb-6">Navigation</h4>
             <ul className="space-y-4 text-zinc-500 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">Our Story</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Services</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Gallery</a></li>
+              <li><Link href="#about" className="hover:text-white transition-colors">Our Story</Link></li>
+              <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
+              <li><Link href="/gallery" className="hover:text-white transition-colors">Gallery</Link></li>
+              <li><Link href="/tracking" className="hover:text-white transition-colors">Track Shipment</Link></li>
             </ul>
           </div>
 

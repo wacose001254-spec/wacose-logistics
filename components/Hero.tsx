@@ -1,6 +1,7 @@
 "use client";
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import Link from 'next/link'; // This fixes the "Cannot find name 'Link'" error
 
 export default function Hero() {
   const ref = useRef(null);
@@ -41,13 +42,20 @@ export default function Hero() {
         <p className="text-xl md:text-2xl font-light max-w-2xl mx-auto mb-8">
           From Nairobi to the Region. Reliable, Swift, and Built on Experience.
         </p>
+        
         <div className="flex gap-4 justify-center">
-          <button className="px-8 py-4 bg-yellow-500 text-black font-bold rounded-full hover:scale-105 transition-transform">
+          <Link 
+            href="#book" 
+            className="px-8 py-4 bg-yellow-500 text-black font-bold rounded-full hover:scale-105 transition-transform"
+          >
             Book a Delivery
-          </button>
-          <button className="px-8 py-4 border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-black transition-all">
+          </Link>
+          <Link 
+            href="/tracking" 
+            className="px-8 py-4 border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-black transition-all"
+          >
             Track Shipment
-          </button>
+          </Link>
         </div>
       </motion.div>
     </section>
