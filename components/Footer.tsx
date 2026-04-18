@@ -43,7 +43,7 @@ export default function Footer() {
             <ul className="space-y-4 text-zinc-500 text-sm">
               <li className="flex items-center gap-2 italic text-zinc-400"><MapPin size={14}/> Nairobi, Kenya</li>
               <li className="flex items-center gap-2"><Mail size={14}/> info@wacose.com</li>
-              <li className="flex items-center gap-2 text-white font-bold text-lg"><Phone size={14}/> +254 7XX XXX XXX</li>
+              <li className="flex items-center gap-2 text-white font-bold text-lg"><Phone size={14}/> +254 759162363</li>
             </ul>
           </div>
 
