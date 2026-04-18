@@ -1,4 +1,12 @@
-import { Instagram, Linkedin, Twitter, MessageCircle } from 'lucide-react'; // Make sure to npm install lucide-react
+"use client";
+import { 
+  Globe, 
+  Share2, 
+  MessageSquare, 
+  Mail, 
+  Phone,
+  MapPin
+} from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -13,9 +21,10 @@ export default function Footer() {
               through speed, trust, and world-class technology.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:text-yellow-500 hover:bg-zinc-800 transition-all"><Instagram size={20} /></a>
-              <a href="#" className="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:text-yellow-500 hover:bg-zinc-800 transition-all"><Twitter size={20} /></a>
-              <a href="#" className="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:text-yellow-500 hover:bg-zinc-800 transition-all"><Linkedin size={20} /></a>
+              {/* Using Universal Icons to bypass the brand-name error */}
+              <a href="#" className="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:text-yellow-500 hover:bg-zinc-800 transition-all"><Globe size={20} /></a>
+              <a href="#" className="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:text-yellow-500 hover:bg-zinc-800 transition-all"><Share2 size={20} /></a>
+              <a href="#" className="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:text-yellow-500 hover:bg-zinc-800 transition-all"><MessageSquare size={20} /></a>
             </div>
           </div>
 
@@ -25,16 +34,15 @@ export default function Footer() {
               <li><a href="#" className="hover:text-white transition-colors">Our Story</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Services</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Gallery</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Fleet Tracking</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-bold mb-6">Contact</h4>
             <ul className="space-y-4 text-zinc-500 text-sm">
-              <li className="flex items-center gap-2 italic">Nairobi, Kenya</li>
-              <li>info@wacose.com</li>
-              <li className="text-white font-bold">+254 7XX XXX XXX</li>
+              <li className="flex items-center gap-2 italic text-zinc-400"><MapPin size={14}/> Nairobi, Kenya</li>
+              <li className="flex items-center gap-2"><Mail size={14}/> info@wacose.com</li>
+              <li className="flex items-center gap-2 text-white font-bold text-lg"><Phone size={14}/> +254 7XX XXX XXX</li>
             </ul>
           </div>
 
