@@ -9,7 +9,7 @@ import Testimonials from "@/components/Testimonials"; // New
 
 // Client Portfolio Component (Keep this outside the Home function)
 function ClientPortfolio() {
-  const partners = ["DHL Partner Network", "Fargo Courier Connect", "Bolt Logistics", "Nairobi Tech Hub"];
+  const partners = ["Moha Grafix", "Kenya Sweets Ltd", "Bolt Ride/Send", "Uber Eats", "Glovo Kenya", "Jumia Food", "Twiga Foods", "Sendy Kenya", "DHL Express Kenya", "FedEx Kenya", "G4S Kenya", "Brinks Kenya", "Securicor Kenya", "Posta Kenya", "Kenya Airways Cargo", "Maersk Kenya", "MSC Kenya", "CMA CGM Kenya", "Hapag-Lloyd Kenya", "Kuehne + Nagel Kenya"];
   return (
     <section className="py-20 bg-black border-y border-white/5">
       <div className="container mx-auto px-6">
