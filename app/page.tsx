@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 
 // 1. Define the ClientPortfolio component OUTSIDE of the Home function
 function ClientPortfolio() {
-  const partners = ["DHL Partner Network", "Fargo Courier Connect", "Bolt Logistics", "Nairobi Tech Hub"];
+  const partners = ["Moha Grafix", "Kenya Sweets LTD", "Bolt Rides/Send", "WAN Styling", "Uber Rides", "Swift Deliveries", "Urban Logistics", "CityLink Couriers"];
   return (
     <section className="py-20 bg-black border-y border-white/5">
       <div className="container mx-auto px-6">
