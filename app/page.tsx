@@ -1,26 +1,57 @@
+"use client";
+import { motion } from "framer-motion";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Gallery from "@/components/Gallery"; // Updated Gallery
+import GallerySlider from "@/components/GallerySlider"; 
 import LiveUpdates from "@/components/LiveUpdates";
 import BookingForm from "@/components/BookingForm";
 import Footer from "@/components/Footer";
-import VideoSection from "@/components/VideoSection"; // New
-import Testimonials from "@/components/Testimonials"; // New
+import VideoSection from "@/components/VideoSection"; 
+import VideoSlider from "@/components/VideoSlider"; 
+import Testimonials from "@/components/Testimonials";
 
-// Client Portfolio Component (Keep this outside the Home function)
+// 1. Moving Marquee Partner Slider
 function ClientPortfolio() {
-  const partners = ["Moha Grafix", "Kenya Sweets Ltd", "Bolt Ride/Send", "Uber Ride", "The Cooking Company", "WAN Styling", "Barakatele", "Zucchini", "Peach Cars", "Lifehack Academy", "Airtel Kenya", "KEBS", "Foremen", "Kanchory & Co. Advocates",];
+  const partners = [
+    "Moha Grafix", "Kenya Sweets Ltd", "Bolt Ride/Send", "Uber Ride", 
+    "The Cooking Company", "WAN Styling", "Barakatele", "Zucchini", 
+    "Peach Cars", "Lifehack Academy", "Airtel Kenya", "KEBS", 
+    "Foremen", "Kanchory & Co. Advocates"
+  ];
+
+  const duplicatedPartners = [...partners, ...partners];
+
   return (
-    <section className="py-20 bg-black border-y border-white/5">
-      <div className="container mx-auto px-6">
-        <p className="text-center text-zinc-600 font-mono text-xs uppercase tracking-[0.5em] mb-10">
+    <section className="py-20 bg-black border-y border-white/5 overflow-hidden">
+      <div className="container mx-auto px-6 mb-12">
+        <p className="text-center text-zinc-600 font-mono text-xs uppercase tracking-[0.5em]">
           Trusted Regional Partners
         </p>
-        <div className="flex flex-wrap justify-center gap-12 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
-          {partners.map((p, i) => (
-            <span key={i} className="text-2xl font-bold text-white tracking-tighter uppercase italic">{p}</span>
+      </div>
+
+      <div className="relative flex overflow-hidden">
+        <motion.div 
+          className="flex whitespace-nowrap gap-16 items-center"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            duration: 35, 
+            ease: "linear",
+            repeat: Infinity,
+          }}
+        >
+          {duplicatedPartners.map((p, i) => (
+            <span 
+              key={i} 
+              className="text-2xl md:text-4xl font-black text-zinc-700 hover:text-yellow-500 transition-colors cursor-default uppercase italic tracking-tighter"
+            >
+              {p}
+            </span>
           ))}
-        </div>
+        </motion.div>
+        
+        {/* Cinema Fades */}
+        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10" />
+        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10" />
       </div>
     </section>
   );
@@ -40,24 +71,27 @@ export default function Home() {
       {/* 3. Real-Time Status Feed */}
       <LiveUpdates />
 
-      {/* 4. Cinematic 4K Video Spotlight (The 'Vibe' Section) */}
+      {/* 4. Cinematic 4K Video Spotlight (YouTube Embed) */}
       <VideoSection />
 
-      {/* 5. The 14-Image High-Res Operations Gallery */}
-      <Gallery />
+      {/* 5. YouTube Shuffle Media Feed */}
+      <VideoSlider />
 
-      {/* 6. Partner Network Visibility */}
+      {/* 6. The 14-Image Animated Operations Gallery */}
+      <GallerySlider />
+
+      {/* 7. Infinite Scrolling Partner Marquee */}
       <ClientPortfolio />
 
-      {/* 7. Client Intelligence (Testimonials) */}
+      {/* 8. Client Intelligence (Testimonials Slider) */}
       <Testimonials />
 
-      {/* 8. Conversion Point (Booking) */}
+      {/* 9. Conversion Point (Booking) */}
       <section id="book" className="relative py-24 bg-zinc-950 flex flex-col items-center">
-        <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-white">
           <div>
-            <h2 className="text-5xl font-black text-white mb-6 uppercase italic">Ready to Ship?</h2>
-            <p className="text-zinc-400 text-lg mb-8">
+            <h2 className="text-5xl font-black mb-6 uppercase italic">Ready to Ship?</h2>
+            <p className="text-zinc-400 text-lg mb-8 leading-relaxed">
               Experience the speed and reliability that only three years of 
               Nairobi street expertise can provide. Direct link to our 
               professional dispatch team.
@@ -69,7 +103,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 9. Global Navigation & Socials */}
+      {/* 10. Global Navigation & Socials */}
       <Footer />
     </main>
   );
